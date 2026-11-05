@@ -1,0 +1,18 @@
+{
+  "_leia": "Termos da proposta de onde esta saiu. O build recusa a página enquanto algum deles aparecer, para o cliente novo nunca ler o nome ou o projeto de outro. 'termos' casa como trecho, sem diferenciar maiúsculas; 'palavras' casa a palavra inteira, com a mesma caixa (para nome curto que é pedaço de palavra comum). Termo que vale também na proposta nova vai em termosPermitidos, no src/data.ts. Ao abrir uma proposta a partir de outra, acrescente aqui os termos da outra.",
+  "origem": "o exemplo do kit (Clínica Bem Viver, inventada)",
+  "termos": [
+    "Bem Viver",
+    "bem-viver",
+    "BEMVIVER",
+    "Marina Rocha",
+    "agenda-online",
+    "Agendamento Online",
+    "clínica",
+    "paciente",
+    "3 unidades",
+    "três unidades",
+    "ilustrativ"
+  ],
+  "palavras": ["Marina"]
+}

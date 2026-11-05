@@ -1,0 +1,16 @@
+{
+  "name": "kit-propostas",
+  "displayName": "Kit de Propostas",
+  "version": "1.0.0",
+  "description": "Propostas técnicas e comerciais que vendem, com a sua marca: escopo preso ao pedido, âncora de valor ou valor direto, PDF igual à tela e um link com código de acesso na Cloudflare. A entrevista lê o seu site e aprende o seu negócio e as suas cores.",
+  "author": {
+    "name": "Paulo Sérgio Dantas",
+    "email": "contato@paulosdantas.adv.br",
+    "url": "https://github.com/dantaspaulo"
+  },
+  "homepage": "https://github.com/dantaspaulo/kit-propostas",
+  "repository": "https://github.com/dantaspaulo/kit-propostas",
+  "license": "LicenseRef-Uso-com-Atribuicao-1.0",
+  "privacyPolicyUrl": "https://github.com/dantaspaulo/kit-propostas/blob/main/PRIVACIDADE.md",
+  "keywords": ["proposta", "orcamento", "proposta-comercial", "ancoragem", "cloudflare", "pt-br"]
+}

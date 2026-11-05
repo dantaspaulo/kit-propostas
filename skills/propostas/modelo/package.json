@@ -1,0 +1,28 @@
+{
+  "name": "proposta-modelo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Proposta técnica e comercial: página única em HTML, PDF igual à tela e publicação com código de acesso (Kit de Propostas, github.com/dantaspaulo/kit-propostas).",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "capturas": "node scripts/capturas.cjs 1440 900 desk && node scripts/capturas.cjs 390 844 cel 60",
+    "pdf": "node scripts/pdf.cjs",
+    "og": "node scripts/og.cjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "1.3.1",
+    "@radix-ui/react-tabs": "1.2.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.49.0",
+    "motion": "13.4.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwind-merge": "3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "esbuild": "0.25.12",
+    "tailwindcss": "4.3.3"
+  }
+}

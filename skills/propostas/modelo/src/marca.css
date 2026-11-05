@@ -1,0 +1,35 @@
+/* Gerado pelo aplicar-marca do Kit de Propostas a partir do perfil do negócio. Não edite aqui:
+   mude a marca no perfil e aplique de novo (skill propostas). */
+@theme {
+  --font-sans: "Manrope", Arial, sans-serif;
+  --font-titulo: "Manrope", Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-serif: "Georgia", Georgia, "Times New Roman", serif;
+  --color-tinta: #1a1c2e;
+  --color-tinta-2: #0d0f1d;
+  --color-fundo: #f2f4fd;
+  --color-papel: #fcfdff;
+  --color-destaque: #7579f7;
+  --color-destaque-forte: #5b5bd6;
+  --color-linha: #d2d5e3;
+  --color-apoio: #606272;
+  --color-noite: #15172e;
+  --color-noite-linha: #313447;
+  --color-noite-apoio: #acb0c5;
+  --color-tom-1: #ede7f0;
+  --color-tom-2: #e7eafa;
+  --color-tom-3: #dce1ff;
+  --color-selecao: #ced4ff;
+  --color-marca: #5b5bd6;
+  --color-neutral-50: #f9faff;
+  --color-neutral-100: #f3f4fd;
+  --color-neutral-200: #e4e6ee;
+  --color-neutral-300: #d2d4dc;
+  --color-neutral-400: #a3a4ac;
+  --color-neutral-500: #73747c;
+  --color-neutral-600: #515259;
+  --color-neutral-700: #3e3f46;
+  --color-neutral-800: #25262c;
+  --color-neutral-900: #16171d;
+  --color-neutral-950: #090a0f;
+}

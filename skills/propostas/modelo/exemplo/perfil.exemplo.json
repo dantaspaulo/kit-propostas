@@ -1,0 +1,31 @@
+{
+  "_leia": "Perfil de EXEMPLO, de um negócio inventado. O de verdade nasce na entrevista (skill propostas-configurar) e fica em <espaço>/meu-negocio/perfil.json.",
+  "versao": 1,
+  "negocio": {
+    "nome": "Estúdio Exemplo",
+    "razaoSocial": "Estúdio Exemplo Ltda.",
+    "cnpj": "00.000.000/0001-00",
+    "endereco": "Rua Exemplo, 100, Centro",
+    "cidade": "São Paulo/SP",
+    "site": "exemplo.com.br",
+    "email": "contato@exemplo.com.br",
+    "whatsapp": "5511900000000",
+    "whatsappVisivel": "(11) 90000-0000",
+    "assinatura": { "nome": "Ana Exemplo", "cargo": "Sócia-diretora" },
+    "sigla": "EXE"
+  },
+  "marca": {
+    "cores": { "marca": "#5B5BD6", "destaque": null, "escura": null, "clara": null },
+    "fontes": { "texto": "Manrope", "titulo": "Manrope", "mono": "DM Mono", "serifa": "Georgia" },
+    "logo": null,
+    "logoClaro": null
+  },
+  "comercial": {
+    "validadeDias": 14,
+    "pagamento": "Pix, boleto ou transferência",
+    "notaFiscal": true,
+    "garantiaDias": 30,
+    "sustentacao": "contratada à parte"
+  },
+  "publicacao": { "worker": "propostas-exemplo", "dominio": null }
+}

@@ -1,0 +1,13 @@
+{
+  "_leia": "Frases que já foram verdade e deixaram de ser. O build recusa a página se alguma aparecer. Quando você descobrir que um preço ou uma regra de fornecedor mudou, acrescente aqui o padrão (expressão regular, sem diferenciar maiúsculas) e o motivo, com a data e a fonte. Assim o erro não volta em nenhuma proposta nova.",
+  "vencidas": [
+    {
+      "padrao": "72 horas (grátis|gratuit|sem cobran)",
+      "motivo": "a janela grátis de conversa vinda de anúncio do WhatsApp não é mais de 72 horas (Meta, regra vigente desde 01/10/2026; confira na página de preços em português)"
+    },
+    {
+      "padrao": "(responder|resposta|atendimento)[^.]{0,60}24 horas[^.]{0,60}(grátis|gratuit|não (é|são) cobrad|sem cobran)",
+      "motivo": "desde 01/10/2026 a Meta cobra as respostas de atendimento no WhatsApp, com uma franquia mensal por número (confira na página de preços em português)"
+    }
+  ]
+}

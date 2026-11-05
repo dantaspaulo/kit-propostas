@@ -1,0 +1,9 @@
+node_modules/
+.build/
+dist/
+saida/
+.DS_Store
+*.env
+.env*
+.dev.vars
+__pycache__/

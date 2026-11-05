@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Imagem da prévia do link no WhatsApp (1200 x 630). É PÚBLICA: o scripts/og.cjs preenche os textos com
+     publicacao.imagem do data.ts (sem cliente e sem valores) e as cores e o logo com o src/marca.json. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link id="fontes" rel="stylesheet" href="">
+<style>
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: var(--noite); font-family: var(--fonte-texto), Arial, sans-serif; color: var(--papel); -webkit-font-smoothing: antialiased; }
+  .fundo { position: absolute; inset: 0;
+    background:
+      radial-gradient(520px 420px at 930px 300px, color-mix(in oklab, var(--destaque) 18%, transparent), transparent 70%),
+      linear-gradient(90deg, color-mix(in oklab, var(--destaque) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in oklab, var(--destaque) 6%, transparent) 1px, transparent 1px);
+    background-size: auto, 32px 32px, 32px 32px; }
+  .curva { position: absolute; left: -80px; top: 390px; width: 1400px; height: 420px; border: 2px solid color-mix(in oklab, var(--destaque) 20%, transparent); border-radius: 50%; transform: rotate(-8deg); }
+  .conteudo { position: absolute; left: 80px; top: 70px; width: 690px; }
+  .marca { display: inline-flex; align-items: center; gap: 14px; font-family: var(--fonte-titulo), Arial, sans-serif; font-size: 27px; font-weight: 800; letter-spacing: -0.05em; }
+  .marca img { height: 44px; width: auto; max-width: 260px; object-fit: contain; }
+  .marca .chip { background: var(--papel); border-radius: 12px; padding: 8px 12px; display: inline-flex; }
+  .marca .chip img { height: 32px; }
+  .monograma { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--destaque); color: var(--tinta); font-size: 24px; }
+  .olho { margin-top: 50px; display: flex; align-items: center; gap: 10px; font: 500 17px var(--fonte-mono), monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--noite-apoio); }
+  .olho:before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--destaque); }
+  h1 { margin: 22px 0 0; font-family: var(--fonte-titulo), Arial, sans-serif; font-size: 74px; line-height: .95; font-weight: 800; letter-spacing: -0.06em; }
+  h1 em { display: block; font-family: var(--fonte-serifa), Georgia, serif; font-style: normal; font-weight: 400; color: var(--destaque); letter-spacing: -0.04em; font-size: 58px; line-height: 1.08; white-space: nowrap; }
+  p { margin: 26px 0 0; font-size: 25px; line-height: 1.4; color: var(--noite-apoio); font-weight: 500; }
+  .rodape { position: absolute; left: 80px; bottom: 56px; display: flex; gap: 12px; }
+  .pilula { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; border: 1px solid var(--noite-linha); background: color-mix(in oklab, var(--noite) 70%, var(--noite-linha)); font: 500 17px var(--fonte-mono), monospace; color: var(--papel); }
+  .pilula.forte { background: var(--destaque); border-color: var(--destaque); color: var(--tinta); }
+  .nucleo { position: absolute; left: 830px; top: 160px; width: 290px; height: 290px; border-radius: 50%; background: var(--destaque); display: grid; place-items: center; text-align: center; box-shadow: 0 0 0 26px color-mix(in oklab, var(--destaque) 12%, transparent), 0 0 0 62px color-mix(in oklab, var(--destaque) 6%, transparent); }
+  .nucleo b { font-family: var(--fonte-titulo), Arial, sans-serif; font-size: 46px; font-weight: 800; letter-spacing: -0.06em; color: var(--tinta); padding: 0 24px; line-height: 1; }
+  .no { position: absolute; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--noite-linha); background: var(--noite); font: 500 16px var(--fonte-mono), monospace; color: var(--papel); white-space: nowrap; }
+  .vazio { display: none; }
+</style>
+</head>
+<body>
+  <div class="fundo"></div>
+  <div class="curva"></div>
+  <div class="conteudo">
+    <span class="marca" data-campo="marca"></span>
+    <div class="olho">Proposta técnica e comercial</div>
+    <h1><span data-campo="titulo"></span><em data-campo="destaque"></em></h1>
+    <p data-campo="frase"></p>
+  </div>
+  <div class="nucleo"><b data-campo="nucleo"></b></div>
+  <div class="no" data-campo="no0" style="left: 800px; top: 104px"></div>
+  <div class="no" data-campo="no1" style="left: 1030px; top: 150px"></div>
+  <div class="no" data-campo="no2" style="left: 1000px; top: 448px"></div>
+  <div class="no" data-campo="no3" style="left: 800px; top: 478px"></div>
+  <div class="rodape">
+    <span class="pilula forte">🔒 Acesso com código</span>
+    <span class="pilula" data-campo="endereco"></span>
+  </div>
+</body>
+</html>

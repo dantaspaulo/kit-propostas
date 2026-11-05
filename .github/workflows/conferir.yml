@@ -1,0 +1,25 @@
+# Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
+# Conferência de cada envio: sintaxe, portão, paleta e a trava do repositório (só os padrões genéricos, porque a
+# lista privada de termos não sai do computador de quem mantém o kit).
+name: Conferir
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Testes leves (sem navegador e sem rede)
+        run: bash testes/testar.sh
+      - name: Portão no runtime da Cloudflare (wrangler dev local, nada é enviado)
+        run: bash testes/portao-no-runtime.sh

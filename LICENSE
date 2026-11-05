@@ -1,0 +1,70 @@
+LICENÇA DE USO COM ATRIBUIÇÃO v1.0 · kit-propostas
+Copyright (c) 2026 Paulo Sérgio Dantas · https://github.com/dantaspaulo/kit-propostas
+Impressão da obra: KPR-PSD-2026
+
+Todos os direitos reservados, exceto o que esta licença concede expressamente.
+
+1. DEFINIÇÕES
+   "Obra": o Kit de Propostas, ou seja, os textos, instruções, métodos escritos, modelos, scripts, imagens e
+   demais arquivos deste repositório, em qualquer versão.
+   "Autor": Paulo Sérgio Dantas.
+   "Avisos de autoria": o nome do Autor; o endereço https://github.com/dantaspaulo/kit-propostas; a impressão
+   KPR-PSD-2026; as linhas de crédito no topo dos arquivos; e os metadados de autoria dos SKILL.md.
+   "Derivado": qualquer versão modificada, traduzida, adaptada ou incorporada da Obra, no todo ou em parte.
+   "Propostas": as páginas, PDFs, imagens e mensagens que você gera com a Obra para os seus clientes.
+
+2. O QUE VOCÊ PODE FAZER, DE GRAÇA
+   a) baixar, instalar e usar a Obra, inclusive com finalidade comercial, para fazer propostas do seu negócio,
+      da sua empresa ou dos seus clientes;
+   b) modificar a Obra para o seu próprio uso;
+   c) divulgar o link do repositório oficial;
+   d) entregar Propostas a quem quiser. As Propostas são suas e não precisam levar crédito visível. O comentário
+      de crédito no código da página e o metadado do PDF podem ser mantidos ou retirados.
+
+3. CONDIÇÕES PARA REDISTRIBUIR
+   Redistribuir é publicar ou repassar cópia da Obra ou de um Derivado, em qualquer meio: repositório, fork
+   público, pacote, marketplace de skills, curso, comunidade ou site. Só é permitido se você cumprir TODAS as
+   condições abaixo:
+   a) manter intactos todos os Avisos de autoria;
+   b) dar crédito visível, no início da descrição ou da página: "Baseado no Kit de Propostas, de Paulo Sérgio
+      Dantas · https://github.com/dantaspaulo/kit-propostas";
+   c) indicar com clareza o que foi modificado em relação à Obra;
+   d) distribuir sob esta mesma licença, com este arquivo incluído;
+   e) distribuir de graça.
+
+4. O QUE É PROIBIDO SEM AUTORIZAÇÃO ESCRITA DO AUTOR
+   a) vender, licenciar ou cobrar pela Obra ou por Derivado, sozinho ou dentro de produto ou serviço pago (curso,
+      mentoria, assinatura, pacote de skills, template, comunidade paga);
+   b) remover, alterar, esconder ou desativar Avisos de autoria em cópias redistribuídas;
+   c) apresentar a Obra ou um Derivado como criação própria ou de outra pessoa;
+   d) usar o nome do Autor para sugerir que ele endossa um produto, um serviço ou uma proposta.
+
+5. COMPONENTES DE TERCEIROS
+   Os componentes de terceiros usados pela Obra seguem as licenças deles (THIRD-PARTY.md). A Obra não inclui
+   código do React Bits Pro: quem usar blocos dele precisa da própria licença e segue os termos dela.
+
+6. TÉRMINO
+   Qualquer violação encerra automaticamente as permissões desta licença. Na primeira violação, as permissões
+   voltam se você corrigir tudo em até 30 dias depois de ser avisado pelo Autor.
+
+7. SEM GARANTIA
+   A Obra é fornecida "no estado em que se encontra", sem garantia de nenhum tipo. Ela ajuda a montar e publicar
+   propostas comerciais; o conteúdo, os valores, os prazos e os compromissos de cada proposta são de quem a envia.
+   Não substitui assessoria jurídica, contábil ou comercial. Na extensão máxima permitida pela lei, o Autor não
+   responde por danos decorrentes do uso ou da impossibilidade de uso da Obra.
+
+8. LEI APLICÁVEL E FORO
+   Esta licença se rege pelas leis da República Federativa do Brasil, em especial a Lei 9.610/1998 (direitos
+   autorais) e a Lei 9.609/1998 (programa de computador). Fica eleito o foro da comarca de Natal/RN.
+
+9. AUTORIZAÇÕES E CONTATO
+   Pedidos de autorização (uso em produto pago, parceria, outra licença): contato@paulosdantas.adv.br
+
+-------------------------------------------------------------------------------------------------
+ENGLISH SUMMARY (for convenience only; the Portuguese text above prevails)
+Free to use, including commercially, to make proposals for your own business or your clients, and free to
+modify for your own use. Proposals you generate are yours and need no visible credit. Redistribution is allowed
+only free of charge, with every authorship notice intact, visible credit to Paulo Sérgio Dantas and
+https://github.com/dantaspaulo/kit-propostas, changes clearly marked, and under this same license. Selling the
+work or derivatives, removing credits from redistributed copies, or claiming authorship is prohibited without
+written permission. No warranty. Governed by Brazilian law.

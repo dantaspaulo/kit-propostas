@@ -1,0 +1,429 @@
+/* Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
+   O visual da proposta: página clara, seções escuras intercaladas, olho em mono, título pesado com um
+   trecho em serifa e a cor da marca nos destaques. As cores e as fontes vêm do src/marca.css (gerado). */
+@import "tailwindcss" source(none);
+@source "./";
+@import "./marca.css";
+
+/* A página é clara com seções escuras; o modo escuro automático de blocos importados fica desligado. */
+@custom-variant dark (&:where(.tema-escuro-desligado, .tema-escuro-desligado *));
+
+/* Tokens do shadcn/ui ligados aos da marca: componente novo do shadcn (ou de outro registro) já entra no tom. */
+:root {
+  --radius: 0.9rem;
+  --background: var(--color-fundo);
+  --foreground: var(--color-tinta);
+  --card: var(--color-papel);
+  --card-foreground: var(--color-tinta);
+  --popover: var(--color-papel);
+  --popover-foreground: var(--color-tinta);
+  --primary: var(--color-tinta);
+  --primary-foreground: var(--color-papel);
+  --secondary: var(--color-tom-2);
+  --secondary-foreground: var(--color-tinta);
+  --muted: var(--color-tom-2);
+  --muted-foreground: var(--color-apoio);
+  --accent: var(--color-destaque);
+  --accent-foreground: var(--color-tinta);
+  --destructive: #b42318;
+  --border: var(--color-linha);
+  --input: var(--color-linha);
+  --ring: var(--color-destaque-forte);
+
+  --pad: clamp(1rem, 4vw, 4.5rem);
+  --max: 1360px;
+  --sombra: 0 24px 70px color-mix(in oklab, var(--color-tinta) 12%, transparent),
+    0 2px 8px color-mix(in oklab, var(--color-tinta) 5%, transparent);
+  --titulo-espaco: -0.065em;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-accordion-down: accordion-down 0.22s ease-out;
+  --animate-accordion-up: accordion-up 0.22s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+  html,
+  body {
+    margin: 0;
+  }
+  body {
+    background: var(--color-fundo);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-selecao);
+    color: var(--color-tinta);
+  }
+  [hidden] {
+    display: none !important;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-destaque-forte);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .kit-wrap {
+    width: min(var(--max), 100%);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  /* Olho: o rótulo em mono, com a bolinha na cor da marca. */
+  .kit-olho {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.3rem;
+    color: var(--color-apoio);
+    font: 500 0.68rem/1.2 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .kit-olho::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-destaque-forte);
+    flex: none;
+  }
+  .kit-olho.claro {
+    color: var(--color-noite-apoio);
+  }
+  .kit-olho.claro::before {
+    background: var(--color-destaque);
+  }
+
+  /* Título: pesado e apertado, com um trecho em serifa (*assim* no texto). */
+  .kit-titulo {
+    margin: 0;
+    font-family: var(--font-titulo);
+    font-weight: 800;
+    letter-spacing: var(--titulo-espaco);
+    line-height: 0.95;
+    text-wrap: balance;
+    font-size: clamp(2.3rem, 5vw, 4.9rem);
+  }
+  .kit-titulo em,
+  .kit-serifa {
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: var(--color-destaque-forte);
+  }
+  .fundo-noite .kit-titulo em,
+  .fundo-noite .kit-serifa,
+  .kit-ui .kit-serifa {
+    color: var(--color-destaque);
+  }
+  .kit-lead {
+    color: var(--color-apoio);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    line-height: 1.68;
+    max-width: 38rem;
+  }
+  .fundo-noite .kit-lead {
+    color: var(--color-noite-apoio);
+  }
+  .kit-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Marca do negócio (logo ou nome). */
+  .kit-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.62rem;
+    font-family: var(--font-titulo);
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+  }
+  .kit-monograma {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: var(--color-noite);
+    color: var(--color-destaque);
+    font-size: 0.95rem;
+    letter-spacing: -0.04em;
+  }
+  .fundo-noite .kit-monograma {
+    background: var(--color-destaque);
+    color: var(--color-tinta);
+  }
+
+  /* Botões. */
+  .kit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 50px;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 800;
+    border: 0;
+    cursor: pointer;
+    transition:
+      transform 0.2s,
+      background 0.2s,
+      box-shadow 0.2s;
+  }
+  .kit-btn:hover {
+    transform: translateY(-2px);
+  }
+  .kit-btn-escuro {
+    background: var(--color-tinta);
+    color: var(--color-papel);
+    box-shadow: 0 14px 30px color-mix(in oklab, var(--color-tinta) 18%, transparent);
+  }
+  .kit-btn-escuro:hover {
+    background: color-mix(in oklab, var(--color-tinta) 88%, var(--color-papel));
+  }
+  .kit-btn-destaque {
+    background: var(--color-destaque);
+    color: var(--color-tinta);
+  }
+  .kit-btn-destaque:hover {
+    background: color-mix(in oklab, var(--color-destaque) 85%, var(--color-papel));
+  }
+  .kit-btn-borda {
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 99px;
+    background: transparent;
+    font-size: 0.76rem;
+  }
+  .kit-btn-borda:hover {
+    background: var(--color-destaque);
+    border-color: var(--color-destaque);
+    color: var(--color-tinta);
+  }
+
+  /* Cartão escuro (mapa da solução, painel da recomendada). */
+  .kit-ui {
+    overflow: hidden;
+    border: 1px solid var(--color-noite-linha);
+    border-radius: 18px;
+    background: var(--color-tinta-2);
+    color: var(--color-papel);
+  }
+  .kit-ui-barra {
+    height: 46px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-bottom: 1px solid var(--color-noite-linha);
+    color: var(--color-noite-apoio);
+    font: 500 0.62rem var(--font-mono);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .kit-ui-barra .fim {
+    margin-left: auto;
+    color: var(--color-destaque);
+  }
+  .kit-ponto-vivo {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-destaque);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-destaque) 18%, transparent);
+    animation: kit-pulso 2.4s ease-in-out infinite;
+  }
+  .kit-grade {
+    background:
+      linear-gradient(90deg, color-mix(in oklab, var(--color-destaque) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in oklab, var(--color-destaque) 7%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .fundo-noite {
+    background: var(--color-noite);
+    color: var(--color-papel);
+  }
+  .fundo-noite-brilho {
+    background:
+      radial-gradient(60rem 30rem at 20% 0%, color-mix(in oklab, var(--color-destaque) 14%, transparent), transparent 60%),
+      var(--color-noite);
+  }
+
+  .kit-cartao {
+    border: 1px solid var(--color-linha);
+    border-radius: 18px;
+    background: var(--color-papel);
+  }
+
+  .kit-progresso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 60;
+    transform-origin: 0 50%;
+    background: var(--color-destaque-forte);
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes kit-pulso {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-destaque) 18%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 8px color-mix(in oklab, var(--color-destaque) 6%, transparent);
+  }
+}
+@keyframes kit-flutuar {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+}
+@keyframes kit-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Três modos de exibição:
+   - tela: .so-tela aparece; .so-impressao fica escondido;
+   - PDF (?pdf, usado pelo scripts/pdf.cjs): como a tela, com tudo aberto e sem botões;
+   - impressão do navegador: o plano B, parecido com o PDF. */
+@media screen {
+  html:not(.modo-pdf) .so-impressao {
+    display: none !important;
+  }
+}
+html.modo-pdf .so-tela,
+html.modo-pdf .nao-imprimir {
+  display: none !important;
+}
+html.modo-pdf .hero-altura {
+  min-height: 0 !important;
+}
+html.modo-pdf .kit-ponto-vivo {
+  animation: none;
+}
+html.modo-pdf .sticky {
+  position: static !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  @page {
+    size: 1440px 2036px;
+    margin: 0;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html,
+  body {
+    background: var(--color-fundo) !important;
+  }
+  [style*="opacity"] {
+    opacity: 1 !important;
+  }
+  [style*="transform"] {
+    transform: none !important;
+  }
+  [style*="filter"] {
+    filter: none !important;
+  }
+  .nao-imprimir,
+  .so-tela {
+    display: none !important;
+  }
+  .hero-altura {
+    min-height: 0 !important;
+  }
+  .sem-quebra,
+  article,
+  li {
+    break-inside: avoid;
+  }
+  .sticky,
+  [class*="sticky"] {
+    position: static !important;
+  }
+}
