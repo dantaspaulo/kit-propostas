@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // O que o build gravou para os scripts e para a publicação: caminho, arquivos, validade e modo.
 const fs = require('fs');
 const arq = '.build/publicacao.json';

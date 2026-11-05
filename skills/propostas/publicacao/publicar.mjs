@@ -20,8 +20,11 @@ import { basename, dirname, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { montarWorker, testar } from "./teste-worker.mjs";
 import { lerPerfil, montarMarca } from "../ferramentas/aplicar-marca.mjs";
+import { exigirAutoria } from "../ferramentas/autoria.mjs";
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
+// A trava de autoria: com os créditos do kit trocados, nada é publicado (LICENSE, cláusulas 1 e 3).
+exigirAutoria();
 const LIMITE_IMAGEM_KB = 290; // o WhatsApp não mostra prévia com imagem acima de ~300 KB
 const WRANGLER = ["--yes", "wrangler@4"];
 

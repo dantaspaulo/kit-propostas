@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 // Peça pesada (WebGL, shader, vídeo) só existe perto da tela: monta ao se aproximar e desmonta ao se

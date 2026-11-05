@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // Captura avulsa de qualquer HTML: node scripts/foto.cjs <html> <png> [largura] [altura] [espera ms] [inteira]
 const { chromium } = require('./navegador.cjs');
 const path = require('path');

@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { recomendada } from "@/data";
 

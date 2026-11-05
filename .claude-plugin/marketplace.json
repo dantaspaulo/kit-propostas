@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Kit de Propostas: propostas que vendem, com a sua marca, num link com código de acesso. Por Paulo Sérgio Dantas.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "kit-propostas",
       "source": "./",
       "description": "Propostas técnicas e comerciais com a sua marca: escopo preso ao pedido, âncora de valor ou valor direto, PDF igual à tela e publicação com código de acesso na Cloudflare. A entrevista lê o seu site e aprende o seu negócio.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Paulo Sérgio Dantas",
         "email": "contato@paulosdantas.adv.br"

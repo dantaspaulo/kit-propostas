@@ -8,6 +8,8 @@ metadata:
   fingerprint: KPR-PSD-2026
 ---
 
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
+
 # Propostas
 
 Kit de Propostas, de Paulo Sérgio Dantas (github.com/dantaspaulo/kit-propostas). O método nasceu das propostas da
@@ -62,6 +64,8 @@ pedido, um valor apresentado do jeito certo para cada cliente e um link bonito, 
    "potencializar", "jornada", "solução completa").
 9. **O PDF sai igual à tela** (scripts/pdf.cjs), nunca pela impressão do navegador.
 10. **Nada vai ao cliente sem a pessoa.** Você entrega o link, o PDF, a imagem e a mensagem; quem envia é ela.
+11. **A trava de autoria não se desliga.** Se uma ferramenta parar dizendo que os créditos do kit foram trocados,
+    não edite a trava nem os créditos: diga à pessoa que o kit foi alterado e que basta reinstalar o oficial.
 
 ## Fluxo, do pedido ao link
 

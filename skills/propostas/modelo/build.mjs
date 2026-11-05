@@ -4,13 +4,28 @@
 // Uso: npm run build (ou pnpm build)  →  dist/proposta-<slug>.html e .build/publicacao.json
 //
 // Cada recusa é um erro de verdade, não um aviso: a proposta não sai enquanto sobrar algum.
-import { build } from "esbuild";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 
 const require = createRequire(import.meta.url);
+
+// Trava de autoria: este arquivo é do Kit de Propostas, e a licença pede manter a linha de crédito do topo. Ela é
+// conferida pela impressão digital (SHA-256), então trocar o nome ou o endereço também para o build. A página que
+// sai é sua: o comentário de crédito dela pode ficar ou sair.
+{
+  const linha = readFileSync(new URL(import.meta.url), "utf8").match(/Kit de Propostas · [^\n]*?KPR-[A-Z]+-\d{4}/)?.[0] ?? "";
+  if (createHash("sha256").update(linha).digest("base64url") !== "1MLydxsc25vZEGZxrXEh7pt1-c14c03zEV2san2ZRq4") {
+    console.error(
+      "Trava de autoria: a linha de crédito do Kit de Propostas no topo do build.mjs foi trocada ou retirada.\n" +
+        "A licença pede mantê-la (LICENSE, cláusulas 1 e 3). Restaure a linha original, ou copie o build.mjs do kit oficial.",
+    );
+    process.exit(3);
+  }
+}
+const { build } = await import("esbuild");
 mkdirSync(".build", { recursive: true });
 mkdirSync("dist", { recursive: true });
 

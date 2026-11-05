@@ -91,7 +91,7 @@ async function irPara(page, seletor, folga = 0) {
   await page.waitForTimeout(3200);
 }
 const dataUri = (buf, tipo = "image/png") => `data:${tipo};base64,${buf.toString("base64")}`;
-const FONTE = '<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">';
+const FONTE = '<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">';
 async function compor(nome, largura, altura, corpo) {
   const page = await browser.newPage({ viewport: { width: largura, height: altura }, deviceScaleFactor: 1 });
   await page.setContent(`<!doctype html><html><head><meta charset="utf-8">${FONTE}<style>*{box-sizing:border-box}body{margin:0;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}</style></head><body>${corpo}</body></html>`);
@@ -251,6 +251,55 @@ await compor(
   420,
   `<div style="height:420px;display:flex;align-items:center;justify-content:center;gap:32px;background:linear-gradient(180deg,#f6f6f8,#ffffff)">${topos.map(cartao).join("")}</div>`,
 );
+
+// 8. A imagem de compartilhamento do repositório (1280 x 640): é a prévia quando alguém manda o link do GitHub no
+// WhatsApp. Sobe pelo GitHub, em Settings > Social preview (não há API para isso).
+passo("imagem de compartilhamento");
+const selos = ["Âncora de valor", "PDF igual à tela", "Aceite no WhatsApp", "Cloudflare"]
+  .map((s) => `<span style="padding:9px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);font:700 16px Manrope,sans-serif">${s}</span>`)
+  .join("");
+await compor(
+  "social.jpg",
+  1280,
+  640,
+  `<div style="position:relative;width:1280px;height:640px;overflow:hidden;color:#fff;background:radial-gradient(760px 460px at 88% 18%, #5B5BD6 0%, transparent 62%), linear-gradient(135deg, #15152B 0%, #1E1E46 58%, #2A2A6B 100%)">
+    <div style="position:absolute;left:72px;top:78px;width:560px">
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font:500 14px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#C9C9FF"><span style="width:8px;height:8px;border-radius:50%;background:#9A9AF5"></span>Skills para Claude Code e outras IAs</div>
+      <h1 style="margin:28px 0 0;font:800 80px/0.94 Manrope,sans-serif;letter-spacing:-0.06em">Kit de<br>Propostas</h1>
+      <p style="margin:24px 0 0;max-width:500px;font:500 24px/1.4 Manrope,sans-serif;color:#D6D6F5">Propostas que vendem, com a sua marca, num link com código de acesso.</p>
+      <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;max-width:540px">${selos}</div>
+    </div>
+    <p style="position:absolute;left:72px;bottom:44px;margin:0;font:500 14px 'DM Mono',monospace;color:#A9A9E8">github.com/dantaspaulo/kit-propostas · por Paulo Sérgio Dantas</p>
+    <div style="position:absolute;left:650px;top:96px;width:740px;transform:rotate(-4deg);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 40px 90px -20px rgba(0,0,0,.65)">
+      <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 12px;background:#f3f3f5"><span style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></span><span style="width:10px;height:10px;border-radius:50%;background:#febc2e"></span><span style="width:10px;height:10px;border-radius:50%;background:#28c840"></span></div>
+      <img src="${dataUri(topo)}" style="display:block;width:100%">
+    </div>
+    <div style="position:absolute;left:1000px;top:206px;transform:rotate(4deg)">${fone(dataUri(cel3), 230)}</div>
+  </div>`,
+);
+
+// 9. O ícone do plugin (quadrado, PNG): o catálogo de plugins do Claude Code mostra na listagem. Uma proposta com o
+// selo de aceite, nas cores do kit.
+passo("ícone do plugin");
+{
+  const icone = join(RAIZ, ".claude-plugin", "icon.png");
+  const page = await browser.newPage({ viewport: { width: 1024, height: 1024 }, deviceScaleFactor: 1 });
+  const barra = (largura, cor, altura = 22, topo = 18) =>
+    `<div style="margin-top:${topo}px;height:${altura}px;width:${largura}%;border-radius:${altura / 2}px;background:${cor}"></div>`;
+  await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0}</style></head><body>
+    <div style="width:1024px;height:1024px;display:grid;place-items:center;background:radial-gradient(620px 520px at 75% 20%, #6B6BE8 0%, transparent 65%), linear-gradient(140deg, #15152B, #2A2A6B)">
+      <div style="position:relative;box-sizing:border-box;width:520px;height:640px;padding:70px 64px;border-radius:44px;background:#F7F7FC;box-shadow:0 60px 120px -30px rgba(0,0,0,.6);transform:rotate(-4deg)">
+        ${barra(62, "#1E1E46", 30, 0)}${barra(88, "#D9D9F0", 22, 34)}${barra(74, "#D9D9F0")}${barra(80, "#D9D9F0")}${barra(100, "#5B5BD6", 92, 46)}
+        <div style="position:absolute;right:-70px;bottom:-60px;display:grid;place-items:center;width:250px;height:250px;border:14px solid #15152B;border-radius:50%;background:#9A9AF5;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)">
+          <svg width="130" height="130" viewBox="0 0 24 24" fill="none" stroke="#15152B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+      </div>
+    </div></body></html>`);
+  await page.waitForTimeout(300);
+  await page.screenshot({ path: icone });
+  await page.close();
+  console.log(`ok .claude-plugin/icon.png (${Math.round(statSync(icone).size / 1024)} KB)`);
+}
 
 await browser.close();
 console.log(`\nImagens em ${DESTINO}. Pasta de trabalho: ${TMP}`);

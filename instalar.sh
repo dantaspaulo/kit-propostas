@@ -63,6 +63,10 @@ else
   fi
 fi
 
+# A trava de autoria: com os créditos trocados ou retirados, o kit não se instala (LICENSE, cláusulas 1 e 3).
+node "$KIT/skills/propostas/ferramentas/autoria.mjs" --conferir "$KIT" >/dev/null || exit 3
+ok "créditos do kit conferidos"
+
 # 2. As skills: um atalho para a pasta do kit em cada lugar, para atualizar junto com ele.
 instalar_em() {
   local destino="$1"

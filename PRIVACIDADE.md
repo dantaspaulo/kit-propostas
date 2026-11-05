@@ -1,3 +1,4 @@
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
 # Privacidade
 
 Última atualização: 4 de novembro de 2026.

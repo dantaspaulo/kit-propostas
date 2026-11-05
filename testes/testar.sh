@@ -26,6 +26,10 @@ node skills/propostas/publicacao/teste-worker.mjs | tail -1
 passo "paleta"
 node testes/teste-paleta.mjs
 
+passo "trava de autoria"
+node skills/propostas/ferramentas/autoria.mjs --conferir
+node testes/teste-autoria.mjs | tail -1
+
 passo "trava do repositório"
 python3 ferramentas-do-repo/teste_conferir_publico.py
 if [ -f .git/info/termos-proibidos.txt ]; then python3 ferramentas-do-repo/conferir-publico.py

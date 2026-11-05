@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 import { createRoot } from "react-dom/client";
 import { App } from "@/App";
 

@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 import { OpcaoProvider } from "@/estado";
 import { Topo } from "@/sections/topo";
 import { Hero } from "@/sections/hero";

@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // A marca do negócio, com tipo. O arquivo src/marca.json é gerado pelo aplicar-marca a partir do perfil.
 import dados from "@/marca.json";
 

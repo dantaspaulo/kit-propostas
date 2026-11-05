@@ -8,6 +8,8 @@ metadata:
   fingerprint: KPR-PSD-2026
 ---
 
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
+
 # Configurar o Kit de Propostas
 
 Kit de Propostas, de Paulo Sérgio Dantas (github.com/dantaspaulo/kit-propostas). A entrevista deixa o kit com a cara

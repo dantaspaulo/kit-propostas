@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // Origem: shadcn/ui (licença MIT, ui.shadcn.com), com as cores da marca e sem dependência extra. Ver THIRD-PARTY.md.
 import * as React from "react";
 import { cn } from "@/lib/utils";

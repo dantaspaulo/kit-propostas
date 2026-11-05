@@ -15,6 +15,8 @@
 set -euo pipefail
 
 FERRAMENTAS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# A trava de autoria: com os créditos do kit trocados, nenhuma proposta nova nasce (LICENSE, cláusulas 1 e 3).
+node "$FERRAMENTAS/autoria.mjs" --conferir >/dev/null || exit 3
 SKILL="$(dirname "$FERRAMENTAS")"
 MODELO="$SKILL/modelo"
 CASA="${KIT_PROPOSTAS_HOME:-$HOME/.kit-propostas}"

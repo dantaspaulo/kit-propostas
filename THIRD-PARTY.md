@@ -1,3 +1,4 @@
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
 # Componentes de terceiros
 
 O Kit de Propostas usa estes componentes, cada um sob a licença do próprio autor. Nenhum deles é vendido aqui.

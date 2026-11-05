@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // Origem: shadcn/ui (licença MIT, ui.shadcn.com), com as cores da marca. Ver THIRD-PARTY.md do kit.
 import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";

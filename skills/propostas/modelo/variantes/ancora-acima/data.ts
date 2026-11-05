@@ -1,3 +1,4 @@
+// Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 // Fonte única de todo o conteúdo da proposta. Preço, escopo, prazo e parcelas saem daqui; o build recusa
 // se as somas não fecharem ou se algo fugir do pedido (build.mjs).
 //

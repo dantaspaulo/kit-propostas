@@ -1,3 +1,4 @@
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
 <!-- ╭──────────────────────────────────────────────────────────────╮ -->
 <!-- │  Kit de Propostas · por Paulo Sérgio Dantas                  │ -->
 <!-- │  github.com/dantaspaulo/kit-propostas                        │ -->
@@ -21,7 +22,7 @@
 <a href="#-publicar-com-c%C3%B3digo-de-acesso"><img src="https://img.shields.io/badge/Cloudflare%20Workers-15152B?style=for-the-badge&logo=cloudflare&logoColor=F6821F" alt="Cloudflare Workers" /></a>
 
 <a href="https://github.com/dantaspaulo/kit-propostas/actions/workflows/conferir.yml"><img src="https://img.shields.io/github/actions/workflow/status/dantaspaulo/kit-propostas/conferir.yml?branch=main&style=flat-square&label=testes&color=5B5BD6&labelColor=15152B" alt="Testes" /></a>
-<img src="https://img.shields.io/badge/vers%C3%A3o-1.0.0-5B5BD6?style=flat-square&labelColor=15152B" alt="Versão 1.0.0" />
+<a href="https://github.com/dantaspaulo/kit-propostas/releases/latest"><img src="https://img.shields.io/github/v/release/dantaspaulo/kit-propostas?style=flat-square&label=vers%C3%A3o&color=5B5BD6&labelColor=15152B" alt="Versão" /></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-uso%20com%20atribui%C3%A7%C3%A3o-5B5BD6?style=flat-square&labelColor=15152B" alt="Licença de Uso com Atribuição" /></a>
 <img src="https://img.shields.io/badge/idioma-portugu%C3%AAs-5B5BD6?style=flat-square&labelColor=15152B" alt="Em português" />
 
@@ -147,7 +148,7 @@ curl -fsSL https://raw.githubusercontent.com/dantaspaulo/kit-propostas/main/inst
 
 Para os dois lugares, `--agente todos`. O passo a passo para a IA está no [AGENTS.md](AGENTS.md).
 
-<sub>Atualizar: rode o instalador de novo. Desinstalar: `~/.kit-propostas/kit/desinstalar.sh` (tira as skills e não apaga as suas propostas).</sub>
+<sub>Atualizar: rode o instalador de novo. O que mudou em cada versão: [Releases](https://github.com/dantaspaulo/kit-propostas/releases) e [CHANGELOG.md](CHANGELOG.md). Desinstalar: `~/.kit-propostas/kit/desinstalar.sh` (tira as skills e não apaga as suas propostas).</sub>
 
 <br/>
 
@@ -252,6 +253,8 @@ O **Kit de Propostas** foi criado por **Paulo Sérgio Dantas** e é distribuído
 - ✅ **As propostas são suas:** a página que o kit gera não precisa de crédito nenhum.
 - ✅ **Pode redistribuir**, só de graça, mantendo os avisos de autoria, com crédito visível e as mudanças indicadas.
 - ❌ **Não pode:** vender o kit ou uma versão dele, apagar ou trocar os créditos, ou apresentar como seu.
+
+Os créditos são protegidos de quatro formas: uma linha de crédito em cada arquivo; o manifesto `AUTORIA.json`, com a impressão digital de cada arquivo da versão oficial; a impressão `KPR-PSD-2026`; e uma **trava**: o instalador, a abertura de proposta, a entrevista, o build e a publicação se recusam a funcionar com os créditos trocados ou retirados.
 
 Detalhes em [NOTICE.md](NOTICE.md). Componentes de terceiros e as licenças deles em [THIRD-PARTY.md](THIRD-PARTY.md).
 

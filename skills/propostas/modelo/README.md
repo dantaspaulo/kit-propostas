@@ -1,3 +1,4 @@
+<!-- Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026 -->
 # Proposta
 
 Proposta técnica e comercial feita com o [Kit de Propostas](https://github.com/dantaspaulo/kit-propostas): uma página

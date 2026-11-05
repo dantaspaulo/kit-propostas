@@ -15,6 +15,9 @@ import { fileURLToPath } from "node:url";
 
 const KIT_SKILL = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", "propostas");
 const { montarMarca } = await import(join(KIT_SKILL, "ferramentas", "aplicar-marca.mjs"));
+// A trava de autoria: com os créditos do kit trocados, a entrevista não grava nada (LICENSE, cláusulas 1 e 3).
+const { exigirAutoria } = await import(join(KIT_SKILL, "ferramentas", "autoria.mjs"));
+exigirAutoria();
 
 const args = process.argv.slice(2);
 const arg = (nome) => {
