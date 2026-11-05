@@ -94,8 +94,13 @@ confere "com o cookie, o PDF sai" "$(curl -s -o /dev/null -w '%{http_code} %{con
 confere "cookie adulterado não entra" "$(curl -s -H "Cookie: ${COOKIE%?}0" "$B/teste/" | grep -c 'Proposta de teste aberta')" "0"
 confere "envio grande demais é recusado" "$(head -c 4000 /dev/zero | tr '\0' 'a' | curl -s -o /dev/null -w '%{http_code}' -X POST --data-binary @- -H 'Content-Type: application/x-www-form-urlencoded' "$B/teste/entrar")" "413"
 confere "envio em pedaços (sem Content-Length) grande demais também" "$(head -c 4000 /dev/zero | tr '\0' 'a' | curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Transfer-Encoding: chunked' --data-binary @- -H 'Content-Type: application/x-www-form-urlencoded' "$B/teste/entrar")" "413"
+# O contador do limite zera a cada minuto: se o laço atravessar a virada, a janela nova precisa de mais 10. Até 25
+# tentativas cobrem duas janelas.
 ULTIMO=""
-for i in $(seq 1 12); do ULTIMO=$(curl -s -o /dev/null -w '%{http_code}' -X POST --data-urlencode "codigo=tentativa-$i" "$B/teste/entrar"); done
+for i in $(seq 1 25); do
+  ULTIMO=$(curl -s -o /dev/null -w '%{http_code}' -X POST --data-urlencode "codigo=tentativa-$i" "$B/teste/entrar")
+  [ "$ULTIMO" = 429 ] && break
+done
 confere "tentativas demais param no limite" "$ULTIMO" "429"
 
 echo
