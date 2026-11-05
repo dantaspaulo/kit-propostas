@@ -2,7 +2,8 @@
 
 Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 
-O modelo já sai bonito sem nada pago: as seções são código próprio com shadcn/ui. Quem tem licença do
+O modelo já sai bonito sem nada pago: as seções são código próprio com shadcn/ui, e quatro peças animadas vêm do
+React Bits gratuito (ver o fim deste arquivo). Quem tem licença do
 [React Bits Pro](https://pro.reactbits.dev) (plano Pro ou Ultimate) pode trocar seções por blocos animados dele,
 como as propostas da PSD Software fazem.
 
@@ -46,3 +47,20 @@ Referência de onde procurar, não obrigação. Compare a categoria inteira e pr
 
 Descrição de cada item: `https://pro.reactbits.dev/api/r/pro/<bloco>.json` (com o cabeçalho
 `Authorization: Bearer $REACTBITS_LICENSE_KEY`). Prévia visual: `pro.reactbits.dev/docs/blocks/<categoria>/<bloco>`.
+
+## React Bits gratuito (já vem no modelo)
+
+- **O que é:** a biblioteca aberta do [React Bits](https://reactbits.dev), de David Haz, com mais de 200 componentes.
+  Licença MIT + Commons Clause: pode usar em qualquer site ou produto, inclusive comercial; **não pode redistribuir
+  os componentes**, nem de graça, nem dentro de um pacote. Por isso o kit não traz o código deles.
+- **Como chega à proposta:** a `nova-proposta.sh` roda `ferramentas/reactbits.mjs <pasta>`, que baixa do registro
+  oficial os nomes listados em `reactbits.json` para `src/components/reactbits/` (fora do git) e guarda uma cópia em
+  `~/.kit-propostas/reactbits`, para as próximas propostas usarem a mesma versão sem rede. `--atualizar` baixa de novo.
+- **Os que o modelo usa:** `Orb` (a esfera da solução), `StarBorder` (a estrela da opção recomendada), `HoldButton`
+  (segurar para aceitar) e `SoftAurora` (o fundo do aceite). Nenhum depende de outro pacote além do React.
+- **Para usar outro:** confira no registro (`https://reactbits.dev/r/<Nome>-TS-TW.json`) se ele não tem dependências,
+  acrescente o nome em `reactbits.json`, rode o `reactbits.mjs` e importe de `@/components/reactbits/<Nome>`. Cores em
+  hexadecimal, tiradas de `marca.cores` (canvas e WebGL não leem variável CSS). WebGL dentro de `SobDemanda`, com
+  versão parada no PDF e para quem pede menos movimento.
+- **Nunca** suba a pasta `src/components/reactbits/` para um repositório público. A trava do repositório do kit recusa.
+

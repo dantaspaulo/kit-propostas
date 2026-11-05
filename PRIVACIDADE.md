@@ -15,6 +15,9 @@ de quem usa o kit nem dos clientes dessa pessoa.
 
 ## Para onde vão os dados
 
+- **React Bits:** quando uma proposta nasce, o kit baixa quatro componentes gratuitos do registro oficial
+  (reactbits.dev). É só um download: nada do seu negócio nem do cliente vai junto. Da segunda vez em diante, usa
+  a cópia guardada no seu computador.
 - **Cloudflare**, só quando você publica: a página da proposta, o PDF, a imagem da prévia e o logo vão para o
   Worker da **sua** conta, atrás do código de acesso (a imagem da prévia e o logo ficam públicos, sem cliente e sem
   valores). O comando de publicação desliga o envio de métricas do wrangler.

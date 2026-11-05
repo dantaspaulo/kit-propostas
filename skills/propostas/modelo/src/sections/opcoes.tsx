@@ -1,14 +1,16 @@
 // Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
-import { Check, Minus, MessageCircle } from "lucide-react";
+import { ArrowDown, Check, Minus, MessageCircle } from "lucide-react";
+import StarBorder from "@/components/reactbits/StarBorder";
 import { Badge } from "@/components/ui/badge";
 import { Numero } from "@/components/kit/numero";
 import { Revelar } from "@/components/kit/revelar";
 import { Titulo } from "@/components/kit/titulo";
 import { opcoes, ordem, secoes } from "@/data";
 import { useOpcao } from "@/estado";
+import { marca } from "@/lib/marca";
 import { comparada, ehAncora, mensagem } from "@/lib/proposta";
 import type { Opcao } from "@/lib/tipos";
-import { brl, cn } from "@/lib/utils";
+import { brl, cn, modoPdf } from "@/lib/utils";
 
 function Parcelas({ o, escuro }: { o: Opcao; escuro: boolean }) {
   return (
@@ -99,6 +101,31 @@ function Painel({ o, escuro, compacto = false }: { o: Opcao; escuro: boolean; co
   );
 }
 
+// A estrela que percorre o contorno da opção recomendada (StarBorder, React Bits gratuito), por cima do cartão e
+// sem pegar clique. Puxa o olho para a recomendada sem gritar. Fora do PDF.
+function EstrelaNaBorda() {
+  if (modoPdf()) return null;
+  const c = marca.cores;
+  return (
+    <StarBorder
+      as="span"
+      aria-hidden
+      className="nao-imprimir"
+      style={{ position: "absolute", inset: 0, padding: 0, pointerEvents: "none", zIndex: 0 }}
+      radius={16}
+      thickness={1.5}
+      color={c.destaque}
+      trailColor={c.destaqueForte}
+      backgroundColor="transparent"
+      borderColor="transparent"
+      duration={5}
+      glow={0.9}
+      hover="none"
+      clickPulse={false}
+    />
+  );
+}
+
 function Seletor() {
   const { ativa, setAtiva } = useOpcao();
   // No celular o painel fica embaixo dos cartões: ao escolher, a página desce até ele.
@@ -119,11 +146,12 @@ function Seletor() {
             aria-checked={ligada}
             onClick={() => escolher(i)}
             className={cn(
-              "group relative rounded-2xl border p-5 text-left transition-all duration-300 sm:p-6",
+              "group relative isolate rounded-2xl border p-5 text-left transition-all duration-300 sm:p-6",
               ligada ? "border-tinta bg-papel shadow-[var(--sombra)]" : "border-linha bg-papel/60 hover:border-apoio/40 hover:bg-papel",
             )}
           >
-            <span className="flex items-start justify-between gap-4">
+            {o.recomendada && <EstrelaNaBorda />}
+            <span className="relative z-[1] flex items-start justify-between gap-4">
               <span>
                 <span className="flex flex-wrap items-center gap-2">
                   <span className="text-[1.15rem] font-extrabold tracking-[-0.03em]">{o.nome}</span>
@@ -140,7 +168,7 @@ function Seletor() {
                 <span className={cn("size-2.5 rounded-full bg-tinta transition-transform", ligada ? "scale-100" : "scale-0")} />
               </span>
             </span>
-            <span className="tabular mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="tabular relative z-[1] mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="text-[1.45rem] font-extrabold tracking-[-0.04em]">{brl(o.preco)}</span>
               <span className="text-[0.84rem] text-apoio">
                 {o.prazo} · {o.equipe}
@@ -166,14 +194,18 @@ function Ancora() {
           className={cn("scroll-mt-24 rounded-[22px] border p-6 transition-colors duration-500 sm:p-9", escuro ? "kit-ui border-noite-linha" : "kit-cartao")}
         >
           <Painel o={o} escuro={escuro} />
+          <a href="#chamada" className={cn("kit-btn nao-imprimir mt-8 w-full", escuro ? "kit-btn-destaque" : "kit-btn-escuro")}>
+            Quero seguir com {o.artigo ?? "o"} {o.nome}
+            <ArrowDown className="size-4" />
+          </a>
           <a
-            href={mensagem(`Quero seguir com a opção ${o.nome}.`)}
+            href={mensagem(`Tenho uma dúvida sobre a opção ${o.nome}.`)}
             target="_blank"
             rel="noreferrer"
-            className={cn("kit-btn nao-imprimir mt-8 w-full", escuro ? "kit-btn-destaque" : "kit-btn-escuro")}
+            className={cn("nao-imprimir mt-3 flex items-center justify-center gap-1.5 text-[0.8rem] font-bold", escuro ? "text-noite-apoio hover:text-papel" : "text-apoio hover:text-tinta")}
           >
             <MessageCircle className="size-4" />
-            Quero seguir com {o.artigo ?? "o"} {o.nome}
+            Tenho uma dúvida antes
           </a>
         </div>
       </div>
@@ -227,9 +259,18 @@ function Unico() {
           </dl>
           <p className="mt-7 mb-1 font-mono text-[0.64rem] tracking-[0.05em] text-noite-apoio uppercase">Parcelas, presas às entregas</p>
           <Parcelas o={o} escuro />
-          <a href={mensagem("Quero seguir com a proposta.")} target="_blank" rel="noreferrer" className="kit-btn kit-btn-destaque nao-imprimir mt-8 w-full">
-            <MessageCircle className="size-4" />
+          <a href="#chamada" className="kit-btn kit-btn-destaque nao-imprimir mt-8 w-full">
             Quero seguir
+            <ArrowDown className="size-4" />
+          </a>
+          <a
+            href={mensagem("Tenho uma dúvida sobre a proposta.")}
+            target="_blank"
+            rel="noreferrer"
+            className="nao-imprimir mt-3 flex items-center justify-center gap-1.5 text-[0.8rem] font-bold text-noite-apoio hover:text-papel"
+          >
+            <MessageCircle className="size-4" />
+            Tenho uma dúvida antes
           </a>
         </div>
       </div>
@@ -239,7 +280,7 @@ function Unico() {
 
 export function Opcoes() {
   return (
-    <section id="opcoes" className="border-y border-linha bg-tom-2/40 py-20 sm:py-24 lg:py-32">
+    <section id="opcoes" className="overflow-x-clip border-y border-linha bg-tom-2/40 py-20 sm:py-24 lg:py-32">
       <div className="kit-wrap">
         <Titulo olho={secoes.investimento.olho} titulo={secoes.investimento.titulo} texto={secoes.investimento.texto} />
         {ehAncora ? <Ancora /> : <Unico />}

@@ -144,7 +144,24 @@ Seis a oito perguntas, nas palavras do cliente. No modo âncora, algumas empurra
 - Uma ou duas do domínio do cliente (no exemplo: "O WhatsApp é oficial? Existe risco de bloqueio?").
 - "E depois da entrega?" (garantia; suporte à parte).
 
-## 10. Texto
+## 10. Da leitura ao aceite
+
+A página conduz: cada seção responde uma dúvida e aponta a próxima, e o fim é um aceite, não um "fale com a gente".
+
+- **O topo mostra antes de explicar:** o cartão do fluxo (`fluxo`) dá o caminho da solução em 3 a 5 passos, e as três
+  respostas dizem como, em quanto tempo e por quanto. Quem só lê o topo já sabe o essencial.
+- **A validade aparece com o prazo contado** ("faltam 12 dias"), no topo e no aceite: urgência verdadeira, sem
+  contagem regressiva inventada.
+- **"Quero seguir" leva ao aceite**, não direto ao WhatsApp. A dúvida tem o seu atalho ("Tenho uma dúvida antes"),
+  para não misturar quem quer conversar com quem já decidiu.
+- **O aceite responde "e agora?"** com os passos depois do sim (`chamada.passos`): contrato, primeira parcela,
+  início. Sem isso, o cliente adia.
+- **Aceitar é um gesto:** segurar o botão por um segundo abre o WhatsApp com a opção, o valor e a forma de pagamento
+  já escritos. O cliente só envia. No PDF, o caminho por escrito.
+- **A barra de aceite** acompanha quem passou do investimento e continuou lendo (custos, condições, dúvidas), para o
+  aceite estar sempre a um toque.
+
+## 11. Texto
 
 - Português do Brasil simples: frase curta, voz ativa, "você" para o cliente.
 - Promessa vira entrega verificável: o quê, quando e como se aceita.

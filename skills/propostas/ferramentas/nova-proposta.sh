@@ -105,6 +105,8 @@ fs.writeFileSync(pkgArq, JSON.stringify(pkg, null, 2) + "\n");
 NODE
 
 node "$FERRAMENTAS/aplicar-marca.mjs" "$PERFIL" "$DEST"
+# Os componentes gratuitos do React Bits vêm do registro oficial deles (o kit não pode redistribuir o código).
+node "$FERRAMENTAS/reactbits.mjs" "$DEST"
 
 cd "$DEST"
 if command -v pnpm >/dev/null 2>&1; then

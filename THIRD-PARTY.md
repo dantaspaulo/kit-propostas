@@ -20,6 +20,12 @@ O Kit de Propostas usa estes componentes, cada um sob a licença do próprio aut
 **React Bits Pro:** o kit não inclui código do React Bits Pro. O arquivo `skills/propostas/referencias/react-bits-pro.md` só cita
 nomes de blocos, para quem tem a própria licença.
 
+**React Bits (gratuito):** o kit também não inclui código do React Bits gratuito ([reactbits.dev](https://reactbits.dev), de David
+Haz, licença MIT + Commons Clause). Quatro componentes dele (Orb, StarBorder, HoldButton e SoftAurora) são baixados
+do registro oficial, na máquina de quem usa, quando uma proposta é criada. A licença permite usá-los em sites e
+produtos, inclusive comerciais, e proíbe redistribuir os componentes: não suba `src/components/reactbits/` para um
+repositório público.
+
 O texto da licença MIT do shadcn/ui, exigido em cópias dos componentes:
 
 ```

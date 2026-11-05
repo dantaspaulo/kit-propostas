@@ -59,6 +59,7 @@ passo("modelo");
 const BASE = join(TMP, "base");
 cpSync(MODELO, BASE, { recursive: true, filter: (o) => !/\/(node_modules|dist|\.build)(\/|$)/.test(o) });
 execSync("command -v pnpm >/dev/null && pnpm install --prefer-offline --silent || npm install --no-audit --no-fund --silent", { cwd: BASE, stdio: "inherit", shell: "/bin/bash" });
+execFileSync("node", [join(KIT, "ferramentas", "reactbits.mjs"), BASE], { stdio: "inherit" });
 
 function montar(marca, modo = "ancora") {
   const pasta = join(TMP, `${marca.id}-${modo}`);
@@ -78,7 +79,7 @@ async function abrir(arquivo, largura, altura, escala = 1) {
   const page = await browser.newPage({ viewport: { width: largura, height: altura }, deviceScaleFactor: escala });
   await page.goto(pathToFileURL(arquivo).href);
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(1600);
+  await page.waitForTimeout(3200); // o cartão do fluxo termina de entrar perto de 2,4 s
   return page;
 }
 // Rola até a seção (as animações de entrada e a contagem dos valores disparam ao aparecer) e espera assentar.
@@ -139,13 +140,13 @@ const invest = await page.screenshot();
 await page.close();
 await compor("investimento.jpg", 1568, 1164, moldura(dataUri(invest), ENDERECO, `linear-gradient(200deg, ${tom}, #ffffff)`));
 
-// 4. No celular: topo, escopo por opção e investimento.
+// 4. No celular: topo, investimento e o aceite.
 passo("celular");
 page = await abrir(abaixo.html, 390, 844, 2);
 const cel1 = await page.screenshot();
-await irPara(page, "#escopo", 0);
-const cel2 = await page.screenshot();
 await irPara(page, "#painel-opcao", 90);
+const cel2 = await page.screenshot();
+await irPara(page, "#chamada .rounded-3xl", 90);
 const cel3 = await page.screenshot();
 await page.close();
 await compor(
@@ -155,7 +156,15 @@ await compor(
   `<div style="height:940px;display:flex;align-items:center;justify-content:center;gap:56px;background:linear-gradient(135deg, ${tom}, #ffffff 70%)">${[cel1, cel2, cel3].map((c) => fone(dataUri(c))).join("")}</div>`,
 );
 
-// 5. O link no WhatsApp (prévia) e a tela do código de acesso, montada pelo próprio portão.
+// 5. O aceite: o que acontece depois, o resumo da opção e o botão de segurar para aceitar.
+passo("aceite");
+page = await abrir(abaixo.html, 1440, 1000);
+await irPara(page, "#chamada", -40);
+const aceite = await page.screenshot();
+await page.close();
+await compor("aceite.jpg", 1568, 1164, moldura(dataUri(aceite), ENDERECO, `linear-gradient(160deg, ${tom}, #ffffff)`));
+
+// 6. O link no WhatsApp (prévia) e a tela do código de acesso, montada pelo próprio portão.
 passo("prévia do link e tela de acesso");
 execFileSync("node", ["scripts/og.cjs"], { cwd: abaixo.pasta, stdio: "ignore" });
 const og = readFileSync(join(abaixo.pasta, abaixo.pub.imagem));
@@ -217,7 +226,7 @@ await compor(
   </div>`,
 );
 
-// 6. A mesma proposta com três marcas: cores, fontes e nome mudam sozinhos a partir do perfil.
+// 7. A mesma proposta com três marcas: cores, fontes e nome mudam sozinhos a partir do perfil.
 passo("três marcas");
 const topos = [];
 for (const m of MARCAS) {

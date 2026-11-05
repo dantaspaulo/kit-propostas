@@ -16,4 +16,9 @@ Primeira versão pública.
 - Portão: código sorteado (3 palavras e 2 algarismos, cerca de 926 milhões de combinações) guardado só como
   SHA-256, cookie assinado preso a cada proposta, limite de tentativas por endereço (o bloco /64 no IPv6) e por
   proposta, e envio limitado a 2 KB. Testado também no runtime da Cloudflare (`testes/portao-no-runtime.sh`).
+- Interface que conduz da leitura ao aceite: topo em duas colunas com o cartão do caminho da solução e a validade
+  contada, a solução numa vitrine escura com a esfera viva, a estrela na opção recomendada, a seção de aceite (o que
+  acontece depois do sim, o resumo da opção e o botão de segurar para aceitar, que abre o WhatsApp com a mensagem
+  pronta) e a barra de aceite. Quatro componentes gratuitos do React Bits (Orb, StarBorder, HoldButton e
+  SoftAurora) baixados do registro oficial quando a proposta nasce, sem redistribuir o código deles.
 - Imagens do README geradas a partir do modelo, com negócios inventados (`ferramentas-do-repo/gerar-imagens.mjs`).

@@ -49,16 +49,17 @@ Fonts. No texto, o trecho em serifa se escreve entre asteriscos: `"Agenda online
 
 | # | Seção | O que faz |
 |---|---|---|
-| 1 | `topo` | barra fixa com a marca, as seções (sublinhado na que está na tela), a barra de leitura, PDF e WhatsApp |
-| 2 | `hero` | olho com a referência, título animado, resumo, para quem, data e validade, as três respostas, chamadas |
-| 3 | `solucao` | pilares, o mapa da solução num cartão escuro e o jeito de trabalhar |
+| 1 | `topo` | barra fixa com a marca, as seções (sublinhado na que está na tela), a barra de leitura, PDF, Conversar e Aceitar |
+| 2 | `hero` | em duas colunas: título animado, resumo, para quem, data, validade (com quantos dias faltam) e referência; ao lado, o cartão do fluxo (`fluxo` no `data.ts`), inclinado sobre a grade viva. Embaixo, as três respostas e as chamadas |
+| 3 | `solucao` | vitrine escura: o texto e, ao lado, o mapa com a esfera viva (Orb) no centro e as partes em volta; embaixo, os pilares e o jeito de trabalhar |
 | 4 | `escopo` | âncora: matriz módulo x opção, com preço e selo do nível; no celular, uma opção por vez em abas. Direto: os módulos em cartões |
 | 5 | `etapas` | gráfico de duração por opção e um cartão por etapa, com o período da opção em foco |
-| 6 | `opcoes` | âncora: seletor de opções e o painel da escolhida (escuro na recomendada); no PDF, todas lado a lado. Direto: o valor e as parcelas |
+| 6 | `opcoes` | âncora: seletor de opções (uma estrela, StarBorder, percorre o contorno da recomendada) e o painel da escolhida; "Quero seguir" leva ao aceite e "Tenho uma dúvida" ao WhatsApp; no PDF, todas lado a lado. Direto: o valor e as parcelas |
 | 7 | `custos` | o que o cliente providencia, três números com fonte e as notas |
 | 8 | `condicoes` | aceite, garantia (num cartão escuro), exclusões, de quem é o quê, condições gerais e a validade |
 | 9 | `duvidas` | acordeão numerado, com o canal de contato ao lado |
-| 10 | `chamada` | o próximo passo, com WhatsApp (mensagem pronta com a opção em foco) e PDF |
+| 10 | `chamada` | o aceite: o que acontece depois de aceitar (`chamada.passos`), o resumo da opção em foco e o botão de segurar para aceitar (HoldButton), que abre o WhatsApp com a mensagem de aceite pronta; ao fundo, a aurora (SoftAurora). No PDF, o caminho para aceitar por escrito |
+| | barra de aceite | aparece depois que o cliente termina o investimento e some no aceite: a opção em foco, o valor e o botão Aceitar |
 | 11 | `rodape` | a marca, a referência, a validade, o contato e os dados da empresa |
 
 As seções são de estrutura: leem tudo do `data.ts` (inclusive os títulos, em `secoes`) e se adaptam ao modo e ao
@@ -99,8 +100,11 @@ número de opções. Texto de projeto não mora nelas.
 frase, o núcleo com quatro partes da solução, "Acesso com código" e o endereço das propostas. **É pública:** sem
 cliente e sem valores.
 
-## Código próprio e blocos prontos
+## Código próprio, React Bits gratuito e blocos pagos
 
-O kit é público, e o React Bits Pro é licenciado: código dele não pode ir para repositório público. Por isso as
-seções do modelo são código próprio, com shadcn/ui (licença MIT) onde cabe. Quem tem licença do React Bits Pro
-pode trocar seções por blocos dele, na própria máquina: ver [react-bits-pro.md](react-bits-pro.md).
+As seções são código próprio, com shadcn/ui (licença MIT) onde cabe. Quatro peças animadas vêm do React Bits
+gratuito: a esfera da solução (Orb), a estrela da opção recomendada (StarBorder), o botão de segurar para aceitar
+(HoldButton) e a aurora do aceite (SoftAurora). A licença do React Bits deixa usar em qualquer site, mas não
+redistribuir os componentes, então o kit não traz o código deles: o `ferramentas/reactbits.mjs` baixa do registro
+oficial quando a proposta nasce (lista em `reactbits.json`). Quem tem licença do React Bits Pro pode trocar
+seções por blocos pagos, na própria máquina: ver [react-bits-pro.md](react-bits-pro.md).

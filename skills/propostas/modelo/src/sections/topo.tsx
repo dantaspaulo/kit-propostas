@@ -1,7 +1,7 @@
 // Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas · KPR-PSD-2026
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
-import { Download, MessageCircle } from "lucide-react";
+import { Check, Download, MessageCircle } from "lucide-react";
 import { Marca } from "@/components/kit/marca";
 import { mensagem, pdf } from "@/lib/proposta";
 import { cn } from "@/lib/utils";
@@ -74,7 +74,7 @@ export function Topo() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={pdf} download className="kit-btn kit-btn-borda" aria-label="Baixar a proposta em PDF">
+          <a href={pdf} download className="kit-btn kit-btn-borda hidden sm:inline-flex" aria-label="Baixar a proposta em PDF">
             <Download className="size-4" />
             <span className="hidden sm:inline">PDF</span>
           </a>
@@ -82,10 +82,15 @@ export function Topo() {
             href={mensagem("Quero conversar sobre ela.")}
             target="_blank"
             rel="noreferrer"
-            className="kit-btn kit-btn-escuro min-h-[44px] px-4 text-[0.76rem]"
+            className="kit-btn kit-btn-borda"
+            aria-label="Conversar pelo WhatsApp"
           >
             <MessageCircle className="size-4" />
-            <span className="hidden sm:inline">Conversar</span>
+            <span className="hidden md:inline">Conversar</span>
+          </a>
+          <a href="#chamada" className="kit-btn kit-btn-escuro min-h-[44px] px-4 text-[0.76rem]">
+            <Check className="size-4" />
+            Aceitar
           </a>
         </div>
       </div>

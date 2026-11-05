@@ -1,3 +1,5 @@
 node_modules/
+# Baixados do React Bits pelo kit: a licença deles não deixa redistribuir o código.
+src/components/reactbits/
 .build/
 .DS_Store

@@ -1,0 +1,4 @@
+{
+  "_leia": "Componentes GRATUITOS do React Bits (reactbits.dev) que a página usa. O kit não traz o código deles (a licença não deixa redistribuir): o ferramentas/reactbits.mjs baixa do registro oficial para src/components/reactbits/, que fica fora do git.",
+  "componentes": ["Orb", "StarBorder", "HoldButton", "SoftAurora"]
+}

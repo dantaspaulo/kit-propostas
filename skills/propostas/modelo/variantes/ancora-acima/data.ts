@@ -427,6 +427,22 @@ export const respostas = [
   },
 ];
 
+/**
+ * O cartão ao lado do título: o caminho da solução do começo ao fim, em 3 a 5 passos curtos. O passo que é o
+ * coração da solução leva nucleo: true. É a primeira coisa que o cliente olha, antes de ler qualquer texto.
+ */
+export const fluxo = {
+  titulo: "Agenda / fluxo",
+  selo: "Como vai funcionar",
+  passos: [
+    { olho: "Paciente", texto: "Marca pelo celular, sem ligar", estado: "marcado" },
+    { olho: "Agenda", texto: "Acha a vaga nas três unidades", estado: "em tempo real", nucleo: true },
+    { olho: "WhatsApp e Pix", texto: "Confirma e segura o horário", estado: "confirmado" },
+    { olho: "Painel", texto: "Ocupação e faltas por unidade", estado: "ao vivo" },
+  ],
+  rodape: "Uma agenda só, do celular ao caixa",
+};
+
 export const solucao = {
   olho: "Como fazemos",
   titulo: "Uma agenda só, *do celular ao caixa*",
@@ -544,7 +560,13 @@ export const duvidas = [
 ];
 
 export const chamada = {
-  olho: "Próximo passo",
+  olho: "Aceite",
   titulo: "Vamos colocar a agenda *no ar?*",
-  texto: "Escolha a opção e fale com a gente pelo WhatsApp. Marcamos a imersão e começamos pela unidade que você preferir.",
+  texto: "Está tudo aqui: o escopo, as etapas, o investimento e as condições. Se fizer sentido para vocês, o aceite leva um segundo, e a gente começa já na semana que vem.",
+  /** O que acontece depois do aceite, em ordem: tira o "e agora?" na hora de decidir. */
+  passos: [
+    { titulo: "Você aceita", texto: "No link da proposta, segurando o botão de aceite: a mensagem, com a opção e o valor, vai pronta para o nosso WhatsApp." },
+    { titulo: "Contrato no mesmo dia", texto: "Mandamos o contrato para assinar on-line; a primeira parcela vence na assinatura." },
+    { titulo: "Imersão em até 5 dias úteis", texto: "Marcamos a imersão com a sua equipe e começamos pela unidade que você escolher." },
+  ],
 };

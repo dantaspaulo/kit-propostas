@@ -67,9 +67,15 @@ Você decide o que só você sabe: valores, prazos e o que entra. O resto a IA p
 
 <br/><br/>
 
+<img src="docs/img/aceite.jpg" width="100%" alt="A seção de aceite: os passos depois do sim, o resumo da opção e o botão de segurar para aceitar" />
+
+<sub><b>Da leitura ao aceite.</b> O fim da página é um aceite, não um "fale com a gente": o que acontece depois do sim, o resumo da opção e o botão de segurar para aceitar, que abre o WhatsApp com a opção, o valor e o pagamento já escritos.</sub>
+
+<br/><br/>
+
 <img src="docs/img/celular.jpg" width="100%" alt="A proposta no celular: topo, escopo por opção e investimento" />
 
-<sub><b>No celular.</b> Tudo cabe na tela: o escopo vira abas por opção, e o investimento abre direto na recomendada.</sub>
+<sub><b>No celular.</b> Tudo cabe na tela: o investimento abre direto na recomendada, e o aceite vem logo abaixo do título, com o valor e o botão.</sub>
 
 <br/><br/>
 
@@ -169,7 +175,7 @@ Já combinei 42 mil com eles, em 3 vezes.
 
 A IA monta o pedido item por item, propõe o escopo, as etapas e as condições, e só segue para os valores com o seu ok. Antes de publicar, você vê as capturas no computador e no celular e o PDF.
 
-O que a página traz: o topo com o resumo em três respostas (como, em quanto tempo, com qual investimento), a solução, o escopo item por item com o que entra em cada opção, as etapas com as entregas, o investimento, os custos que ficam com o cliente (hospedagem, mensagens, taxas), as condições (aceite, garantia, o que não está incluso, propriedade) e as dúvidas. O botão "Conversar" abre o seu WhatsApp.
+O que a página traz: o topo com o caminho da solução num cartão e o resumo em três respostas (como, em quanto tempo, com qual investimento), a solução, o escopo item por item com o que entra em cada opção, as etapas com as entregas, o investimento, os custos que ficam com o cliente (hospedagem, mensagens, taxas), as condições (aceite, garantia, o que não está incluso, propriedade), as dúvidas e o aceite. Uma barra acompanha quem passou do investimento e continuou lendo, para o aceite estar sempre a um toque.
 
 <br/>
 
@@ -192,15 +198,17 @@ O que o cliente vê: a prévia do link no WhatsApp (sem valores e sem o nome del
 - **Fora da busca:** `noindex`, `robots.txt` fechando tudo, CSP e nada em cache público. Só a imagem da prévia e o logo são públicos.
 - **Testado no runtime de verdade:** 32 testes da lógica do portão e 22 rodando no `wrangler dev`, o mesmo motor da Cloudflare, sem enviar nada.
 - **Nada some e nada vaza:** o build recusa a página se sobrou nome, endereço ou referência de outra proposta, se o texto público cita o cliente ou valores, e se a chave do React Bits Pro aparecer.
-- **Seus dados ficam com você:** o kit não tem telemetria. Fora os downloads da instalação (GitHub, npm e o navegador), ele só fala com o seu site (quando você pede a leitura), com o Google Fonts (as fontes da página) e com a Cloudflare (quando você publica). Detalhes em [PRIVACIDADE.md](PRIVACIDADE.md).
+- **Seus dados ficam com você:** o kit não tem telemetria. Fora os downloads (GitHub, npm, o navegador e os componentes gratuitos do React Bits), ele só fala com o seu site (quando você pede a leitura), com o Google Fonts (as fontes da página) e com a Cloudflare (quando você publica). Detalhes em [PRIVACIDADE.md](PRIVACIDADE.md).
 
 <br/>
 
-## ✨ React Bits Pro (opcional)
+## ✨ Animações do React Bits
 
-As seções do modelo são código próprio sobre [shadcn/ui](https://ui.shadcn.com) (Radix e Tailwind), com animações em Motion. Já saem bonitas sem nada pago.
+As seções do modelo são código próprio sobre [shadcn/ui](https://ui.shadcn.com) (Radix e Tailwind), com animações em Motion, e quatro peças vêm do [React Bits](https://reactbits.dev) gratuito: a esfera viva da solução (Orb), a estrela que percorre a opção recomendada (StarBorder), o botão de segurar para aceitar (HoldButton) e a aurora do aceite (SoftAurora).
 
-Se você tem licença do [React Bits Pro](https://pro.reactbits.dev), a skill troca seções por blocos animados de lá com a **sua** chave (`REACTBITS_LICENSE_KEY`), e indica qual bloco combina com cada seção. A licença deles não permite redistribuir o código, então nenhum bloco vem neste repositório, e a sua proposta continua sendo uma página só, no seu Worker.
+A licença do React Bits deixa usar em qualquer site, inclusive comercial, mas não deixa redistribuir os componentes. Por isso o código deles não está neste repositório: quando uma proposta nasce, o kit baixa os quatro do registro oficial para a sua máquina, como uma biblioteca.
+
+Se você tem licença do [React Bits Pro](https://pro.reactbits.dev), a skill também troca seções por blocos pagos, com a **sua** chave (`REACTBITS_LICENSE_KEY`), e indica qual bloco combina com cada seção. Nada disso vem no repositório, e a sua proposta continua sendo uma página só, no seu Worker.
 
 <br/>
 

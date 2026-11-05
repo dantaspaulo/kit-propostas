@@ -2,6 +2,7 @@
 // Contas e textos que as seções de estrutura usam. Nada de texto de projeto aqui: ele mora no data.ts.
 import { arquivoPdf, modo, opcoes, proposta, publicacao, recomendada, unidadePrazo, wa } from "@/data";
 import type { Modulo, Opcao } from "@/lib/tipos";
+import { brl } from "@/lib/utils";
 import type { VarianteSelo } from "@/components/ui/badge";
 
 export const ehAncora = modo === "ancora" && opcoes.length > 1;
@@ -36,6 +37,20 @@ export function para() {
 export const quem = () => proposta.cliente.empresa || proposta.cliente.contato;
 
 export const mensagem = (texto: string) => wa(`Olá! Li a proposta ${proposta.referencia} (${publicacao.titulo}). ${texto}`);
+
+/** A mensagem de aceite, com a opção, o valor e a forma de pagamento: o cliente só envia. */
+export const mensagemAceite = (o: Opcao) =>
+  mensagem(`Quero aceitar a proposta${ehAncora ? ` na opção ${o.nome}` : ""}: ${brl(o.preco)}, ${o.pagamento}. Qual é o próximo passo?`);
+
+/** Quanto falta para a proposta vencer, contado no dia de quem lê ("faltam 12 dias", "vence hoje"). */
+export function faltam() {
+  const hoje = new Date(`${new Date().toLocaleDateString("sv-SE")}T00:00:00`);
+  const dias = Math.round((new Date(`${proposta.validadeISO}T00:00:00`).getTime() - hoje.getTime()) / 86400000);
+  if (dias > 1) return `faltam ${dias} dias`;
+  if (dias === 1) return "vence amanhã";
+  if (dias === 0) return "vence hoje";
+  return "prazo vencido: fale com a gente";
+}
 export const pdf = `./${arquivoPdf}`;
 
 /** Comparação de uma opção com a recomendada, no painel de investimento. */

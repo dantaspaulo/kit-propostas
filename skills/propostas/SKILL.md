@@ -74,8 +74,10 @@ pedido, um valor apresentado do jeito certo para cada cliente e um link bonito, 
    linha de porquê. O resto você propõe e marca como sugestão.
 2. **Abrir a proposta:** `bash ferramentas/nova-proposta.sh <pasta> <caminho> <ancora|ancora-acima|direto>`.
    `<caminho>` é o endereço, curto e sem o nome do cliente. Para partir de outra proposta da pessoa, `--de <pasta>`.
+   Ela também baixa os componentes gratuitos do React Bits do site oficial (rede na primeira vez; depois, cópia local).
 3. **Escrever o `src/data.ts`** seguindo o [método](referencias/metodo.md): pedido, módulos com a matriz, opções,
-   etapas, custos de terceiros com fonte, condições, dúvidas, topo e textos das seções.
+   etapas, custos de terceiros com fonte, condições, dúvidas, topo, o cartão do fluxo (`fluxo`), os passos depois do
+   aceite (`chamada.passos`) e os textos das seções. A página conduz da leitura ao aceite (método, item 10).
 4. **`npm run build` (ou `pnpm build`) até passar.** Cada recusa é erro de verdade. A primeira lista o que sobrou do
    exemplo: é a lista de trabalho.
 5. **Olhar a página:** `node scripts/capturas.cjs 1440 900 desk` e `node scripts/capturas.cjs 390 844 cel 60`, e ver

@@ -21,6 +21,7 @@ Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas
     ├── herdado.json            termos da origem: o build recusa enquanto sobrar algum
     ├── afirmacoes.json         frases que já foram verdade e deixaram de ser
     ├── components.json         shadcn (com os registros do React Bits Pro, que pedem a chave da própria pessoa)
+    ├── reactbits.json          os componentes gratuitos do React Bits que a página usa (baixados, não versionados)
     ├── src/
     │   ├── data.ts             TODO o conteúdo
     │   ├── marca.json, marca.css   a marca (gerados pelo aplicar-marca)
@@ -29,7 +30,9 @@ Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas
     │   ├── App.tsx, main.tsx, estado.tsx
     │   ├── lib/                tipos, utilitários, a marca com tipo e as contas das seções
     │   ├── components/ui/      shadcn: accordion, tabs, badge
-    │   ├── components/kit/     peças próprias: marca, título, revelar, número, grade viva, mapa
+    │   ├── components/kit/     peças próprias: marca, título, revelar, número, grade viva, mapa, esfera, cartão do
+    │   │                       fluxo e barra de aceite
+    │   ├── components/reactbits/  Orb, StarBorder, HoldButton e SoftAurora, baixados do registro oficial (fora do git)
     │   └── sections/           uma por seção
     ├── scripts/                capturas, pdf, og, foto, conferir-tela, navegador, publicacao
     ├── publicar/og.html        a imagem da prévia
@@ -53,11 +56,16 @@ Kit de Propostas · Paulo Sérgio Dantas · github.com/dantaspaulo/kit-propostas
 | `ordem`, `recomendada` | a ordem de apresentação e o índice da recomendada (a que abre selecionada) |
 | `exemploNiveis` | âncora: o exemplo de por que o mesmo módulo custa diferente |
 | `secoes` | olho, título e texto das seções de estrutura (escopo, etapas, investimento, condições, dúvidas) |
-| `topo`, `respostas`, `solucao`, `custos`, `condicoes`, `duvidas`, `chamada` | o texto de cada seção |
+| `fluxo` | o cartão ao lado do título: `titulo`, `selo`, `passos` (3 a 5, `{ olho, texto, estado, nucleo? }`) e `rodape` |
+| `topo`, `respostas`, `solucao`, `custos`, `condicoes`, `duvidas` | o texto de cada seção |
+| `chamada` | o aceite: olho, título, texto e `passos` (o que acontece depois de aceitar, em ordem) |
 
 Células da matriz: `S(nota?)`, `P("o que entra")` e `N`, uma por opção, na ordem do array `opcoes`.
 
 ## As guardas do `build.mjs`
+
+Antes de tudo, o build confere que os componentes do `reactbits.json` estão em `src/components/reactbits/`; se
+faltar algum, manda rodar `ferramentas/reactbits.mjs` (precisa de rede na primeira vez).
 
 O build recusa quando:
 

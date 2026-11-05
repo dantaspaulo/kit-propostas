@@ -3,6 +3,8 @@
    trecho em serifa e a cor da marca nos destaques. As cores e as fontes vêm do src/marca.css (gerado). */
 @import "tailwindcss" source(none);
 @source "./";
+/* Os componentes do React Bits ficam fora do git (.gitignore), e o Tailwind pula pasta ignorada: registro explícito. */
+@source "./components/reactbits";
 @import "./marca.css";
 
 /* A página é clara com seções escuras; o modo escuro automático de blocos importados fica desligado. */

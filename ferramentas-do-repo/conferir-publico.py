@@ -67,7 +67,7 @@ DERIVADO_RB = [
     ("código derivado do React Bits Pro", re.compile(r"(adaptad|derivad|copiad|tirad|baseado)[oa]s?\b.{0,60}react ?bits", re.I)),
     ("import do registro do React Bits", re.compile(r"""from\s+['"]@(reactbits|/components/(blocks|react-bits))""")),
 ]
-PASTAS_RB = [re.compile(p) for p in (r"(^|/)components/blocks/", r"(^|/)components/react-bits/", r"(^|/)vendor/react-bits", r"(^|/)blocos-licenciados/")]
+PASTAS_RB = [re.compile(p) for p in (r"(^|/)components/blocks/", r"(^|/)components/react-bits/", r"(^|/)components/reactbits/", r"(^|/)vendor/react-bits", r"(^|/)blocos-licenciados/")]
 
 
 def arquivos_do_repositorio():

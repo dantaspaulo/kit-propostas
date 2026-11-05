@@ -1,4 +1,5 @@
 node_modules/
+**/src/components/reactbits/
 .build/
 dist/
 saida/

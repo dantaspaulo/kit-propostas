@@ -38,6 +38,7 @@ trap 'cd "$RAIZ"' EXIT
 passo "modelo nos três modos (em $TMP)"
 cp -R skills/propostas/modelo "$TMP/base"
 (cd "$TMP/base" && { command -v pnpm >/dev/null && pnpm install --prefer-offline --silent || npm install --no-audit --no-fund --silent; })
+node skills/propostas/ferramentas/reactbits.mjs "$TMP/base" >/dev/null
 for modo in ancora ancora-acima direto; do
   mkdir -p "$TMP/$modo"
   (cd "$TMP/base" && tar --exclude node_modules --exclude variantes --exclude exemplo -cf - .) | (cd "$TMP/$modo" && tar -xf -)

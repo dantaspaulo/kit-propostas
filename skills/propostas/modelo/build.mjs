@@ -14,6 +14,13 @@ const require = createRequire(import.meta.url);
 mkdirSync(".build", { recursive: true });
 mkdirSync("dist", { recursive: true });
 
+// 0. Os componentes gratuitos do React Bits vêm do registro oficial, não do kit (a licença não deixa redistribuir).
+const faltamRb = JSON.parse(readFileSync("reactbits.json", "utf8")).componentes.filter((n) => !existsSync(`src/components/reactbits/${n}.tsx`));
+if (faltamRb.length) {
+  console.error(`Faltam componentes do React Bits (${faltamRb.join(", ")}). Rode: node <pasta do kit>/skills/propostas/ferramentas/reactbits.mjs .`);
+  process.exit(1);
+}
+
 // 1. Guardas sobre os DADOS, antes de gastar tempo com o resto.
 await build({
   entryPoints: ["src/data.ts"],
